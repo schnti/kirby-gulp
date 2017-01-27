@@ -1,0 +1,18 @@
+# Created by .gitignore support plugin (hsz.mobi)
+
+.DS_Store
+.project
+.idea/**/*
+
+/node_modules/
+/platforms/
+/plugins/
+/build/
+*.dmg
+
+
+/_build/
+/build-nwjs/
+npm-debug.log
+
+/getChangelog.sh

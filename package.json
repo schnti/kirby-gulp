@@ -1,0 +1,28 @@
+{
+  "name": "kirby-gulp",
+  "version": "0.0.1",
+  "description": "",
+  "license": "UNLICENSED",
+  "author": "Timo Schneider",
+  "scripts": {},
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "del": "2.2.0",
+    "gulp": "3.5.6",
+    "gulp-concat": "2.2.0",
+    "gulp-concat-util": "0.5.2",
+    "gulp-expect-file": "0.0.7",
+    "gulp-livereload": "3.8.0",
+    "gulp-minify-css": "0.3.0",
+    "gulp-rename": "1.2.0",
+    "gulp-sass": "2.0.4",
+    "gulp-using": "0.0.1",
+    "require-dir": "0.3.0",
+    "run-sequence": "1.1.1",
+    "gulp-sourcemaps": "2.4.0"
+  }
+}
