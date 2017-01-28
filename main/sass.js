@@ -22,7 +22,7 @@
             .pipe(gulp.dest(config.paths.dist + '/assets/css/'))
 
             .pipe(cleanCSS({
-                compatibility : 'ie8'
+                compatibility : 'ie9'
             }))
 
             .pipe(rename({extname : '.min.css'}))

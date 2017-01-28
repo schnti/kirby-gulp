@@ -8,7 +8,7 @@
     // load config
     var config = require('./gulpfile.config.js');
 
-    require('SPIRIT21-gulp/web/gulpfile');
+    require('kirby-gulp/web/gulpfile');
 
     gulp.task('default', function (done) {
         runSequence(
