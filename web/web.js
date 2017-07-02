@@ -13,7 +13,7 @@
     gulp.task('web', function (done) {
         runSequence(
             //'clean',
-            ['bower', 'sass'],
+            ['bower', 'sass', 'js'],
             done);
     });
 
@@ -21,13 +21,14 @@
 
         runSequence(
             //'clean',
-            ['bower', 'sass'],
+            ['bower', 'sass', 'js'],
             done);
 
         livereload.listen();
 
         gulp.watch(config.paths.sass, ['sass']);
         gulp.watch(config.paths.html, ['html']);
+        gulp.watch(config.paths.js, ['js']);
 
     });
 

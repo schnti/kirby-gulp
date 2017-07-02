@@ -4,6 +4,7 @@ module.exports = {
         html : ['./website/index.php', './website/site/snippets/**/*.php', './website/site/templates/**/*.php'],
         sass : ['scss/**/*.scss'],
         sassMain : ['scss/styles.scss'],
+        js : ['javascript/**/*.js'],
         bower : 'bower_components',
         dist : 'website'
     },
