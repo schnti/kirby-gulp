@@ -8,5 +8,6 @@
     require('../main/js');
     require('../main/sass');
 
-    require('./web')
+    require('./web');
+    require('./favicon');
 })();
