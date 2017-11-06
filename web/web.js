@@ -14,6 +14,7 @@
         runSequence(
             //'clean',
             ['bower', 'sass', 'js'],
+            'favicon:check',
             done);
     });
 
@@ -22,6 +23,7 @@
         runSequence(
             //'clean',
             ['bower', 'sass', 'js'],
+            'favicon:check',
             done);
 
         livereload.listen();
