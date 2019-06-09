@@ -11,6 +11,7 @@
 /wwww/
 *.dmg
 .npmrc
+package-lock.json
 
 
 /_build/

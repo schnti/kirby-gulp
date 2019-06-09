@@ -4,7 +4,6 @@
     'use strict';
 
     var gulp = require('gulp');
-    var runSequence = require('run-sequence');
     var realFavicon = require('gulp-real-favicon');
     var fs = require('fs');
 
@@ -33,7 +32,7 @@
                         precomposedIcons : false,
                         declareOnlyDefaultIcon : true
                     },
-                    appName: config.favicon.name || ''
+                    appName : config.favicon.name || ''
                 },
                 desktopBrowser : {},
                 windows : {
@@ -49,7 +48,7 @@
                             rectangle : false
                         }
                     },
-                    appName: config.favicon.name || ''
+                    appName : config.favicon.name || ''
                 },
                 androidChrome : {
                     pictureAspect : 'noChange',
@@ -108,12 +107,9 @@
         });
     });
 
-    gulp.task('favicon', function (done) {
-        runSequence(
-            'favicon-generate',
-            'copy-favicon',
-            // 'check-for-favicon-update',
-            done);
-    });
+    gulp.task('favicon', gulp.series(
+        'favicon-generate',
+        'copy-favicon'
+    ));
 
 })();

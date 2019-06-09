@@ -3,7 +3,6 @@
     'use strict';
 
     require('../main/bower');
-    require('../main/clean');
     require('../main/html');
     require('../main/js');
     require('../main/sass');

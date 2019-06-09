@@ -4,32 +4,21 @@
     'use strict';
 
     var gulp = require('gulp');
-    var runSequence = require('run-sequence');
     var livereload = require('gulp-livereload');
 
     var config = require('./../../../gulpfile.config.js');
 
 
-    gulp.task('web', function (done) {
-        runSequence(
-            //'clean',
-            ['bower', 'sass', 'js'],
-            done);
-    });
+    gulp.task('web', gulp.parallel('bower', 'sass', 'js'));
 
-    gulp.task('web:watch', function (done) {
+    gulp.task('web:watch', gulp.parallel(
+        'bower', 'sass', 'js',
+        function () {
+            livereload.listen();
 
-        runSequence(
-            //'clean',
-            ['bower', 'sass', 'js'],
-            done);
-
-        livereload.listen();
-
-        gulp.watch(config.paths.sass, ['sass']);
-        gulp.watch(config.paths.html, ['html']);
-        gulp.watch(config.paths.js, ['js']);
-
-    });
+            gulp.watch(config.paths.sass, gulp.series('sass'));
+            gulp.watch(config.paths.html, gulp.series('html'));
+            gulp.watch(config.paths.js, gulp.series('js'));
+        }));
 
 })();

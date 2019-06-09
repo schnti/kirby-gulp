@@ -11,8 +11,6 @@
 
     var config = require('./../../../gulpfile.config.js');
 
-    gulp.task('bower', ['bower:css', 'bower:js', 'bower:assets']);
-
     var defaultTasks = [];
 
     function createTask(name, key) {
@@ -37,9 +35,10 @@
         defaultTasks.push(taskName);
     }
 
-    gulp.task('bower:assets', defaultTasks);
+    gulp.task('bower:assets', gulp.series(defaultTasks));
 
     gulp.task('bower:js', function () {
+        // es tritt ein Problem auf, wenn für config.bower.js keine Datei angegeben ist
         return gulp.src(config.bower.js, {cwd : config.paths.bower})
             .pipe(expect(config.bower.js))
             .pipe(sourcemaps.init())
@@ -50,6 +49,7 @@
     });
 
     gulp.task('bower:css', function () {
+        // es tritt ein Problem auf, wenn für config.bower.css keine Datei angegeben ist
         return gulp.src(config.bower.css, {cwd : config.paths.bower})
             .pipe(expect(config.bower.css))
             .pipe(sourcemaps.init())
@@ -57,5 +57,11 @@
             .pipe(sourcemaps.write('/'))
             .pipe(gulp.dest(config.paths.dist + '/assets/css/'));
     });
+
+    gulp.task('bower', gulp.series(
+        'bower:css',
+        'bower:js',
+        'bower:assets')
+    );
 
 })();
