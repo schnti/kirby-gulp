@@ -7,6 +7,7 @@
     var sourcemaps = require('gulp-sourcemaps');
     var cleanCSS = require('gulp-clean-css');
     var sass = require('gulp-sass');
+    var sassGlob = require('gulp-sass-glob');
     var rename = require('gulp-rename');
     var livereload = require('gulp-livereload');
 
@@ -15,6 +16,7 @@
     gulp.task('sass', function () {
         return gulp.src(config.paths.sassMain)
             .pipe(sourcemaps.init())
+            .pipe(sassGlob())
             .pipe(sass({
                 errLogToConsole : true
             }).on('error', sass.logError))
